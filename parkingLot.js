@@ -64,7 +64,7 @@ class ParkingLot {
       if (this.motorcycleSpotsCount - MOTORCYCLE_SPOT >= 0) {
         this.motorcycleSpotsCount -= MOTORCYCLE_SPOT;
         return true;
-      } else if (this.compactSpotsCount - MOTORCYCLE_SPOT >= 0) {
+      } else if (this.motorcycleSpotsCount === 0 && this.compactSpotsCount - MOTORCYCLE_SPOT >= 0) {
         this.compactSpotsCount -= MOTORCYCLE_SPOT;
         return true;
       }
