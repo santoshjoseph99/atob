@@ -39,7 +39,6 @@ class ParkingLot {
       } else if (this.compactSpotsCount + MOTORCYCLE_SPOT <= this.compactSpotsMax) {
         this.compactSpotsCount += MOTORCYCLE_SPOT;
         return true;
-        j;
       }
       return false;
     }
@@ -47,17 +46,13 @@ class ParkingLot {
 
   removeVehicle(type) {
     if (type === VEHICLE_LARGE) {
-      console.log(this.largeSpotsCount, this.compactSpotsCount);
       if (this.largeSpotsCount - LARGE_SPOT >= 0) {
         this.largeSpotsCount -= LARGE_SPOT;
-        console.log('here1');
         return true;
       } else if (this.largeSpotsCount == 0 && this.compactSpotsCount - LARGE_IN_COMPACT_SPOT >= 0) {
         this.compactSpotsCount -= LARGE_IN_COMPACT_SPOT;
-        console.log('here2');
         return true;
       }
-      console.log('here3');
       return false;
     } else if (type === VEHICLE_COMPACT) {
       if (this.compactSpotsCount - COMPACT_SPOT >= 0) {
